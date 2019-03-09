@@ -1,0 +1,478 @@
+body {
+  height: 600px;
+  background-color: #e5eaf0;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyr-Medium';
+  src: url('src/fonts/HelveticaNeueCyr-Medium.eot');
+  src: url('src/fonts/HelveticaNeueCyr-Medium.eot?#iefix') format('embedded-opentype'),
+       url('src/fonts/HelveticaNeueCyr-Medium.svg#HelveticaNeueCyr-Medium') format('svg'),
+       url('src/fonts/HelveticaNeueCyr-Medium.ttf') format('truetype'),
+       url('src/fonts/HelveticaNeueCyr-Medium.woff') format('woff'),
+       url('src/fonts/HelveticaNeueCyr-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrap {
+  position: static;
+}
+
+.menu {
+  float: left;
+}
+
+.wind {
+  margin: 13px 20px 14px 191px;
+  padding-top: 11px;
+  width: auto;
+  height: 530px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
+  background-color: #ffffff;
+}
+
+.writeRect {
+  margin-left: 22px;
+  width: 147px;
+  height: 32px;
+  border-radius: 3px;
+  background-color: #6287bd;
+}
+
+.writeWord {
+  padding-top: 7px;
+  margin-left: 46px;
+  width: 56px;
+  height: 15px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.entRect {
+  margin-top: 8px;
+  margin-left: 22px;
+  width: 147px;
+  height: 22px;
+  border-radius: 3px;
+  background-color: #cdd6e4;
+}
+
+.entWord {
+  margin-top: 4px;
+  margin-left: 10px;
+  padding-top: 4px;
+  width: 56px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #555555;
+}
+
+.sendWord {
+  margin-top: 6px;
+  margin-left: 32px;
+  width: 81px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #707070;
+}
+
+.deletedWord {
+  margin-top: 8px;
+  margin-left: 32px;
+  width: 62px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #707070;
+ 
+}
+
+.spamWord {
+  margin-top: 8px;
+  margin-left: 32px;
+  width: 29px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #707070;
+  
+}
+
+.draftWord {
+  margin-top: 8px;
+  margin-left: 32px;
+  width: 59px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #707070;
+ 
+}
+
+.createFoldWord {
+  margin-top: 8px;
+  margin-left: 32px;
+  width: 80px;
+  height: 13px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #707070;
+ 
+}
+
+#yandexPict {
+  margin-left: 11px;
+  margin-top: 12px;
+}
+
+.high {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#lines {
+  margin-top: 18.8px;
+  margin-left: 22px;
+}
+
+#fLine {
+  width: 20px;
+  height: 2.4px;
+  margin-top: 2.8px;
+  margin-bottom: 4.8px;
+  background-color: #000000;
+}
+
+#sLine {
+  width: 20px;
+  height: 2.4px;
+  margin-top: 4.8px;
+  margin-bottom: 4.8px;
+  background-color: #000000;
+}
+
+#tLine {
+  width: 20px;
+  height: 2.4px;
+  margin-top: 4.8px;
+  margin-bottom: 4.8px;
+  background-color: #000000;
+}
+
+#search {
+  width: 301px;
+  height: 32px;
+  opacity: 0.5;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  margin-left: 114px;
+  margin-top: 11px;
+}
+
+.searchWord {
+  width: 297px;
+  height: 26px;
+  opacity: 0.5;
+  font-family: YSText;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.13;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.beginning {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+#square {
+  margin-left: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+#resend {
+  margin-left: 20px;
+  width: 68px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #cccccc;
+}
+
+#delete {
+  margin-left: 26px;
+  width: 54px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #cccccc;
+}
+
+#thisIsSpam {
+  margin-left: 24px;
+  width: 62px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #cccccc;
+}
+
+#read {
+  margin-left: 25px;
+  width: 70px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #cccccc;
+}
+
+#emLine {
+  height: 0px;
+  border: solid 1px #e2e2e2;
+}
+
+.email {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#yandexCircle {
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+#yandexPassport {
+  margin-left: 10px;
+  width: 130px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+#blueCircle {
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #6287bd;
+}
+
+#letter {
+  margin-left: 10px;
+  margin-top: 15px;
+  max-width: 300px;
+  height: 31px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+#date {
+  float: right;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 10px;
+  height: 16px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  text-align: right;
+  color: #9b9b9b;
+}
+
+#end {
+  margin-top: 356.5px;
+}
+
+#other {
+  margin-right: 20px;
+  text-align: right;
+  height: 12px;
+  margin-top: 14px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9b9b9b;
+}
+
+#open {
+  display: none;
+}
+
+#open:checked ~ #firstLetter {
+  display: none;
+}
+
+#open:checked ~ .afterFirst {
+  display: none;
+}
+
+#open:checked ~ #art {
+  display: inline-block;
+}
+
+#art {
+  display: none;
+  background: url("src/background.jpg");
+  background-attachment: fixed;
+  background-size: 15%;
+  background-repeat: space;
+  background-color: #FFFFDD;
+}
+
+#cancelSign {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/*------------------------------------------*/
+
+#circledCat {
+  float: right;
+  display: inline-block; 
+  padding: 10px; 
+  margin: 10px;
+  cursor: help;
+  background: transparent;
+  mix-blend-mode: multiply;
+  border-radius: 50%;
+  shape-outside: circle();
+}
+
+.begin {
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: sans-serif;
+}
+
+#frontend {
+  font-family: fantasy;
+  font-size: 12pt;
+  letter-spacing: 5px;
+}
+
+#febr {
+  color: blue;
+  opacity: 0.5;
+}
+
+#smiles {
+  color: red;
+  font-weight: 500;
+  font-stretch: ultra-expanded;
+}
+
+p {
+  text-indent: 1.5em;
+}
+
+#firstWord {
+  color: red;
+}
+
+.first {
+  text-decoration: overline;
+}
+
+.second {
+  text-decoration: line-through;
+}
+
+.third {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #FFAA00;
+}
+
+a {
+  color: #00AA00;
+}
