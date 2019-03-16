@@ -15,222 +15,154 @@ body {
   font-style: normal;
 }
 
-.wrap {
-  position: static;
-}
+/*----- MENU -----*/
 
 .menu {
-  float: left;
+  display: inline-block;
+  margin-top: 13px;
+  margin-left: 22px;
+  width: 147px;
 }
 
 .wind {
-  margin: 13px 20px 14px 191px;
-  padding-top: 11px;
-  width: auto;
-  height: 530px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 13px 20px 14px 22px;
+  width: calc(100% - 215px);
+  min-width: 300px;
+  min-height: 580px;
+  max-height: 800px;
   border-radius: 3px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.34);
   background-color: #ffffff;
 }
 
-.writeRect {
-  margin-left: 22px;
-  width: 147px;
-  height: 32px;
-  border-radius: 3px;
-  background-color: #6287bd;
+ul {
+  list-style-type: none;
 }
 
-.writeWord {
-  padding-top: 7px;
-  margin-left: 46px;
-  width: 56px;
-  height: 15px;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.writeButton {
+  width: 147px;
+  height: 32px;
+  border: none;
+  border-radius: 3px;
+  background-color: #6287bd;
   font-family: HelveticaNeueCyr-Medium;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #ffffff;
 }
 
-.entRect {
+.list {
+  height: 13px;
   margin-top: 8px;
-  margin-left: 22px;
-  width: 147px;
+  margin-left: -28px;
+  font-family: HelveticaNeueCyr-Medium;
+  font-size: 11px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.list:hover {
+  padding-top: 4px;
+  padding-left: 10px;
+  margin-left: -38px;
   height: 22px;
   border-radius: 3px;
   background-color: #cdd6e4;
+  color: #555555
 }
 
-.entWord {
-  margin-top: 4px;
-  margin-left: 10px;
-  padding-top: 4px;
-  width: 56px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #555555;
-}
-
-.sendWord {
-  margin-top: 6px;
-  margin-left: 32px;
-  width: 81px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #707070;
-}
-
-.deletedWord {
-  margin-top: 8px;
-  margin-left: 32px;
-  width: 62px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #707070;
- 
-}
-
-.spamWord {
-  margin-top: 8px;
-  margin-left: 32px;
-  width: 29px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #707070;
-  
-}
-
-.draftWord {
-  margin-top: 8px;
-  margin-left: 32px;
-  width: 59px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #707070;
- 
-}
-
-.createFoldWord {
-  margin-top: 8px;
-  margin-left: 32px;
-  width: 80px;
-  height: 13px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 11px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #707070;
- 
-}
-
-#yandexPict {
-  margin-left: 11px;
-  margin-top: 12px;
-}
+/*----- HEADER -----*/
 
 .high {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
-#lines {
-  margin-top: 18.8px;
+.beforeLines {
+  margin-top: -2px;
   margin-left: 22px;
+  height: 19px;
 }
 
-#fLine {
+.lineHigh {
   width: 20px;
-  height: 2.4px;
-  margin-top: 2.8px;
-  margin-bottom: 4.8px;
+  height: 2px;
+  margin-top: 4px;
   background-color: #000000;
 }
 
-#sLine {
-  width: 20px;
-  height: 2.4px;
-  margin-top: 4.8px;
-  margin-bottom: 4.8px;
-  background-color: #000000;
+.yandexPict {
+  margin-left: 11px;
 }
 
-#tLine {
-  width: 20px;
-  height: 2.4px;
-  margin-top: 4.8px;
-  margin-bottom: 4.8px;
-  background-color: #000000;
-}
-
-#search {
+.search {
+  margin-left: 114px;
   width: 301px;
   height: 32px;
-  opacity: 0.5;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  line-height: 100%;
   background-color: #ffffff;
-  margin-left: 114px;
-  margin-top: 11px;
 }
 
 .searchWord {
-  width: 297px;
-  height: 26px;
+  border: none;
+  display: inline-block;
+  padding-left: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   opacity: 0.5;
-  font-family: YSText;
   font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2.13;
-  letter-spacing: normal;
-  color: #000000;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-.beginning {
+.canselSearchSign {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 5px;
+  width: 9px;
+  height: 9px;
+  margin-left: -20px;
+  opacity: 0.15;
 }
 
-#square {
-  margin-left: 20px;
+/*----- MAIN PART -----*/
+
+/*----- MAIN HEADER -----*/
+
+#beforeLetters {
+  font-size: 13px; 
+}
+
+.letterHeader {
+  display: inline-block;
+}
+
+.squareNew {
+  margin-left: -25px;
+  width: 16px;
+  height: 16px;
+}
+
+.notCheckboxHeader {
+  margin-left: 26px;
+  margin-top: -10px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-weight: 500;
+  color: #cccccc;
+}
+
+.selectButton {
+  position: absolute;
+  margin-left: 2px;
+  margin-top: -18px;
   width: 16px;
   height: 16px;
   border-radius: 3px;
@@ -238,159 +170,135 @@ body {
   background-color: #ffffff;
 }
 
-#resend {
-  margin-left: 20px;
-  width: 68px;
-  height: 16px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #cccccc;
-}
-
-#delete {
-  margin-left: 26px;
-  width: 54px;
-  height: 16px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #cccccc;
-}
-
-#thisIsSpam {
-  margin-left: 24px;
-  width: 62px;
-  height: 16px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #cccccc;
-}
-
-#read {
-  margin-left: 25px;
-  width: 70px;
-  height: 16px;
-  font-family: HelveticaNeueCyr-Medium;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #cccccc;
-}
-
-#emLine {
+.delimiterLine {
+  margin: 10px 0 15px 0px;
   height: 0px;
-  border: solid 1px #e2e2e2;
+  opacity: 0.5;
 }
 
-.email {
+.selectCheckbox:checked + .selectButton:after {
+  visibility: inherit;
+}
+
+.selectButton:after {
+  margin: -3px 0 0 4px;
+  width: 7px;
+  height: 14px;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  color: #000000;
+  -webkit-transform: scale(0.85) rotate(47deg) skewX(12deg);
+  transform: scale(0.85) rotate(47deg) skewX(12deg);
+  visibility: hidden;
+}
+
+/*----- ONE LETTER -----*/
+
+.letter {
+  margin-left: -40px;
+}
+
+.letterPart {
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
-#yandexCircle {
+.letterInnerior {
+  margin: -10px 0 0 0;
+}
+
+.senderPictWrap {
   margin-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.senderPict {
+  width: inherit;
   border-radius: 50%;
 }
 
-#yandexPassport {
+.sender {
   margin-left: 10px;
   width: 130px;
   height: 16px;
   font-family: HelveticaNeueCyr-Medium;
   font-size: 13px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #000000;
 }
 
-#blueCircle {
+.unread {
   margin-left: 20px;
+  margin-top: 11px;
+  margin-bottom: 10px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #6287bd;
 }
 
-#letter {
+.letterText {
   margin-left: 10px;
-  margin-top: 15px;
   max-width: 300px;
-  height: 31px;
   font-family: HelveticaNeueCyr-Medium;
   font-size: 13px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #000000;
 }
 
-#date {
+.date {
   float: right;
   margin-left: auto;
   margin-right: 20px;
-  margin-top: 10px;
-  height: 16px;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  margin-top: 0px;
   font-family: HelveticaNeueCyr-Medium;
   font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 28px;
-  letter-spacing: normal;
   text-align: right;
   color: #9b9b9b;
 }
 
-#end {
-  margin-top: 356.5px;
-}
+/*----- FOOTER MAIN -----*/
 
-#other {
-  margin-right: 20px;
+.other {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  margin-right: 28px;
   text-align: right;
-  height: 12px;
-  margin-top: 14px;
+  width: calc(100% - 230px);
   font-family: HelveticaNeueCyr-Medium;
   font-size: 11px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #9b9b9b;
 }
+
+.other > .delimiterLine {
+  margin: 10px 20px 15px;
+  width: 100%;
+  height: 0px;
+  opacity: 0.5;
+}
+
+/*----- ART EFFECTS -----*/
 
 #open {
   display: none;
 }
 
-#open:checked ~ #firstLetter {
+#open:checked ~ .firstLetter {
   display: none;
 }
 
-#open:checked ~ .afterFirst {
+#open:checked ~ #afterFirst {
   display: none;
 }
 
@@ -407,13 +315,13 @@ body {
   background-color: #FFFFDD;
 }
 
-#cancelSign {
+#cancelArtSign {
   float: right;
   margin-top: 20px;
   margin-right: 20px;
 }
 
-/*------------------------------------------*/
+/*----- ART DECORATION -----*/
 
 #circledCat {
   float: right;
@@ -467,12 +375,4 @@ p {
 
 .third {
   text-decoration: underline;
-}
-
-a:visited {
-  color: #FFAA00;
-}
-
-a {
-  color: #00AA00;
 }

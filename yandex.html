@@ -4,174 +4,291 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+
+        function selectAllButton() {
+            var allCheckboxButtons = document.querySelectorAll('.selectCheckbox');
+            var mainCheckboxButton = document.querySelector('.selectCheckbox');
+            for (var i = 1; i < allCheckboxButtons.length; i++) {
+                allCheckboxButtons[i].checked = mainCheckboxButton.checked;
+            }
+        }
+
+        function addLetter() {
+            var letters = document.getElementById('afterFirst');
+            var newLetter = document.createElement('li');
+            newLetter.className = "letter";
+            newLetter.innerHTML = '<ul class="letterInnerior">\n' +
+                                            '<li class="squareNew letterPart">\n' +
+                                                '<label>\n' +
+                                                    '<input type="checkbox" name="CCC" class="selectCheckbox">\n' +
+                                                    '<div class="selectButton"></div>\n' +
+                                                '</label>\n' +
+                                            '</li>\n' +
+                                            '<li class="senderPictWrap letterPart">\n' +
+                                                '<img  \n' +
+                                                    'src="src/yandexCircle.jpg"\n' +
+                                                    'class="senderPict" \n' +
+                                                    'alt="yandex" \n' +
+                                                '/>\n' +
+                                            '</li>\n' +
+                                            '<li class="sender letterPart">\n' +
+                                                'Яндекс\n' +
+                                            '</li>\n' +
+                                            '<li class="unread letterPart">\n' +
+                                             '\n' +
+                                            '</li>\n' +
+                                            '<li class="letterText letterPart">\n' +
+                                                'Письмо\n' +
+                                            '</li>\n' +
+                                            '<li class="date letterPart">\n' +
+                                                '16 авг\n' +
+                                            '</li>\n' +
+                                        '</ul>\n' +
+                                        '<hr class="delimiterLine">\n';
+
+            letters.insertBefore(newLetter, letters.firstChild);
+        }
+
+    function deleteLetter() {
+        var allCheckboxButtons = document.querySelectorAll('.selectCheckbox');
+        for (var i = 1; i < allCheckboxButtons.length; i++) {
+            if (allCheckboxButtons[i].checked) {
+                var letter = allCheckboxButtons[i];
+                while (letter.className != 'letter') {
+                    letter = letter.parentElement;
+                }
+                letter.remove();
+            }
+        }
+    }
+
+    </script>
     <title>Mail</title>
   </head>
 <body>
   <content class="wrap">
     <header>
-        <div class="high" id="lines">
-            <div id="fLine"></div>
-            <div id="sLine"></div>
-            <div id="tLine"></div>
-        </div>
-        <img
-            id="yandexPict"
-            class="high"
-            src="src/YandexMail.png"
-            width="153"
-            height="31" 
-        />
-        <section class="high" id="search">
-            <input type="text" name="Поиск" class="searchWord">
+        <section class="high beforeLines">
+            <div class="lineHigh"></div>
+            <div class="lineHigh"></div>
+            <div class="lineHigh"></div>
+        </section>
+        <section class="high">
+            <a href="https://mail.yandex.ru">
+                <img
+                    class="yandexPict"
+                    alt="yandexMailPicture"
+                    src="src/YandexMail.png"
+                    width="153"
+                    height="31"
+                />
+            </a>
+        </section>
+        <section class="high search">
+            <input type="text" placeholder="Поиск" class="searchWord">
+            <!-- <div class="cancelSearchSign">&#9747;</div> -->
         </section>
     </header>
 
     <main>
         <section class="menu">
-            <section class="writeRect">
-                <div class="writeWord">
+            <a id="newLet">
+                <button name="writeButton" class="writeButton" onclick="addLetter()">
                     Написать
-                </div>
-            </section>
-            <section class="entRect">
-                <div class="entWord">
-                    Входящие
-                </div>
-            </section>
-            <div class="sendWord">
-                Отправленные
-            </div>
-            <div class="spamWord">
-                Спам
-            </div>
-            <div class="draftWord">
-                Черновики
-            </div>
-            <div class="createFoldWord">
-                Создать папку
-            </div>
+                </button>
+            </a>
+            <ul>
+                <li class="list">
+                    <a href="" style="font-weight: bold;">Входящие</a>
+                </li>
+                <li class="list">
+                    <a href="">Отправленные</a>
+                </li>
+                <li class="list">
+                    <a href="">Спам</a>
+                </li>
+                <li class="list">
+                    <a href="">Черновики</a>
+                </li>
+                <li class="list">
+                    <a href="">Создать папку</a>
+                </li>
+            </ul>
         </section>
+
         <section class="wind">
-            <section class="beginning">
-                <div class="beginning" id="square">
-                    
-                </div>
-                <div class="beginning" id="resend">
-                    Переслать
-                </div>
-                <div class="beginning" id="delete">
-                    Удалить
-                </div>
-                <div class="beginning" id="thisIsSpam">
-                    Это спам!
-                </div>
-                <div class="beginning" id="read">
-                    Прочитано
-                </div>
-            </section>
-            <section id="emLine"></section>
+            <ul class="beforeLetters">
+                <li class="squareNew letterHeader">
+                    <label>
+                        <input type="checkbox" name="CCC" class="selectCheckbox" onclick="selectAllButton()">
+                        <div class="selectButton"></div>
+                    </label>
+                </li>
+                <li class="letterHeader">
+                    <input type="button" name="resendButton" value="Переслать" class=" notCheckboxHeader">
+                </li>
+                <li class="letterHeader">
+                    <input type="button" name="deleteButton" value="Удалить" class="notCheckboxHeader" onclick="deleteLetter()">
+                </li>
+                <li class="letterHeader">
+                    <input type="button" name="spamButton" value="Это спам!" class="notCheckboxHeader">
+                </li>
+                <li class="letterHeader">
+                    <input type="button" name="readButton" value="Прочитано" class="notCheckboxHeader">
+                </li>
+            </ul>
+            <hr class="delimiterLine">
 
-            <input type="checkbox" id="open">
-            <article id="art">
-                <label for="open" id="cancelSign">&#9747</label>
-                <img
-                    id="circledCat"
-                    src="src/cat-circle.png"
-                    width="290"
-                    height="290"
-                    alt="Я изучаю HTML и CSS"
-                />
+            <ul class="lettersList">
+                <input type="checkbox" id="open">
+                <article id="art">
+                    <label for="open" id="cancelArtSign">&#9747;</label>
+                    <img
+                        src="src/cat-circle.png"
+                        id="circledCat"
+                        width="290"
+                        height="290"
+                        alt="Я изучаю HTML и CSS"
+                    />
 
-                <p class="begin">
-                    Я студентка 3 курса университета <abbr title="информационных технологий, механики и оптики">ИТМО</abbr>, поэтому я считаю, что если ты ещё не определился с будущей специализацией,
-                    то самое время это сделать. В отличие от многих знакомых с моего потока, я ещё не уверена в том,
-                    чем бы мне хотелось заниматься в ближайшем обозримом будущем. Вследствие этого мне было бы
-                    интересно пройти этот курс.
-                </p>
+                    <p class="begin">
+                        Я студентка 3 курса университета <abbr title="информационных технологий, механики и оптики">ИТМО</abbr>, поэтому я считаю, что если ты ещё не определился с будущей специализацией,
+                        то самое время это сделать. В отличие от многих знакомых с моего потока, я ещё не уверена в том,
+                        чем бы мне хотелось заниматься в ближайшем обозримом будущем. Вследствие этого мне было бы
+                        интересно пройти этот курс.
+                    </p>
 
-                <p>
-                    <span id="firstWord" class="first">Во-первых</span>, внешний вид сайтов/приложений/etc &ndash; это первое, на что обращают внимание
-                    пользователи, а уже потом на функциональность, поэтому без знания того, как сделать красиво,
-                    чтобы привлечь внимание пользователя, успеха добиться невозможно. По этой причине я ожидаю, что
-                    меня научат, как пользоваться существующими возможности разработки.
-                </p>
+                    <p>
+                        <span id="firstWord" class="first">Во-первых</span>, внешний вид сайтов/приложений/etc &ndash; это первое, на что обращают внимание
+                        пользователи, а уже потом на функциональность, поэтому без знания того, как сделать красиво,
+                        чтобы привлечь внимание пользователя, успеха добиться невозможно. По этой причине я ожидаю, что
+                        меня научат, как пользоваться существующими возможности разработки.
+                    </p>
 
-                <p>
-                    <span id="firstWord" class="second">Во-вторых</span>, взаимодействие между членами команды разработчиков &ndash; немаловажная составляющая успеха,
-                    поэтому мне было бы интересно узнать, как устроена работа <span id="frontend">фронтенд</span>-разработчиков, чтобы лучше понимать их
-                    и, возможно, писать код, который было бы проще понимать и позже реализовывать.
-                </p>
+                    <p>
+                        <span id="firstWord" class="second">Во-вторых</span>, взаимодействие между членами команды разработчиков &ndash; немаловажная составляющая успеха,
+                        поэтому мне было бы интересно узнать, как устроена работа <span id="frontend">фронтенд</span>-разработчиков, чтобы лучше понимать их
+                        и, возможно, писать код, который было бы проще понимать и позже реализовывать.
+                    </p>
 
-                <p>
-                    <span id="firstWord" class="third">В-третьих</span>, я считаю, что любое знание может быть полезным, даже если оно не кажется таковым на первый взгляд.
-                    Как говорится <i><q>всё, что нас не убивает, делает нас сильнее</q></i>, (но я это не про <span id="frontend">фронтенд</span> <span id="smiles">:)</span> ), поэтому я думаю,
-                    что этот курс поможет расширить моё сознание и открыть некоторые ещё не изведанные мной стороны <b>IT</b>-сферы.
-                </p>
+                    <p>
+                        <span id="firstWord" class="third">В-третьих</span>, я считаю, что любое знание может быть полезным, даже если оно не кажется таковым на первый взгляд.
+                        Как говорится <i><q>всё, что нас не убивает, делает нас сильнее</q></i>, (но я это не про <span id="frontend">фронтенд</span> <span id="smiles">:)</span> ), поэтому я думаю,
+                        что этот курс поможет расширить моё сознание и открыть некоторые ещё не изведанные мной стороны <b>IT</b>-сферы.
+                    </p>
 
-                <p>
-                    Обобщая всё вышесказанное, хочется сказать, что, в общем-то, единственное моё желание состоит в том,
-                    чтобы это было интересно и живо, чтобы хотелось ходить на пары и выполнять домашние задания. Очень
-                    буду надеяться, что всё получится.
-                </p>
-               </article>   
+                    <p>
+                        Обобщая всё вышесказанное, хочется сказать, что, в общем-то, единственное моё желание состоит в том,
+                        чтобы это было интересно и живо, чтобы хотелось ходить на пары и выполнять домашние задания. Очень
+                        буду надеяться, что всё получится.
+                    </p>
+                </article>
 
-            <section id="firstLetter">
-                <label for="open" class="email" id="square">
-                    
-                </label>
-                <label for="open"><img 
-                    class="email" 
-                    id="yandexCircle" 
-                    src="src/yandexCircle.jpg"
-                    width="30"
-                    height="30" 
-                /></label>
-                <label for="open" class="email" id="yandexPassport">
-                    Anonymous
-                </label>
-                <label for="open" class="email" id="blueCircle">
-                    
-                </label>
-                <label for="open" class="email" id="letter">
-                    Интересная статейка...
-                </label>
-                <label for="open" class="email" id="date">
-                    10 авг
-                </label>
-            </section>
-            <section id="emLine" class="afterFirst"></section>
-            <section class="afterFirst">
-                <div class="email" id="square">
-                    
-                </div>
-                <img 
-                    class="email" 
-                    id="yandexCircle" 
-                    src="src/yandexCircle.jpg"
-                    width="30"
-                    height="30" 
-                />
-                <div class="email" id="yandexPassport">
-                    Яндекс.Паспорт
-                </div>
-                <div class="email" id="blueCircle">
-                    
-                </div>
-                <div class="email" id="letter">
-                    Соберите всю почту в этот ящик
-                </div>
-                <div id="date">
-                    6 авг
-                </div>
-            </section>
-            <section id="emLine" class="afterFirst"></section>
-            <section id="end" class="afterFirst"></section>
-            <section id="emLine"></section>
-            <div id="other">
-                Помощь и обратная связь&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Реклама&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                © 2001 - 2018, Яндекс
-            </div>
+                <section id="afterFirst">
+                    <li class="letter">
+                        <label for="open" class="firstLetter">
+                            <ul class="letterInnerior">
+                                <li class="squareNew letterPart">
+                                    <label>
+                                        <input type="checkbox" name="CCC" class="selectCheckbox">
+                                        <div class="selectButton"></div>
+                                    </label>
+                                </li>
+                                <li  class="senderPictWrap letterPart">
+                                    <!-- <img
+                                        src="src/yandexCircle.jpg"
+                                        class="senderPict"
+                                        alt="yandex"
+                                    /> -->
+                                </li>
+                                <li class="sender letterPart">
+                                    Anonymous
+                                </li>
+                                <li class="unread letterPart">
+
+                                </li>
+                                <li class="letterText letterPart">
+                                    Интересная статейка...
+                                </li>
+                                <li class="date letterPart">
+                                    10 авг
+                                </li>
+                            </ul>
+                        </label>
+                        <hr class="delimiterLine">
+                    </li>
+
+                    <li class="letter">
+                        <ul class="letterInnerior">
+                            <li class="squareNew letterPart">
+                                <label>
+                                    <input type="checkbox" name="CCC" class="selectCheckbox">
+                                    <div class="selectButton"></div>
+                                </label>
+                            </li>
+                            <li class="senderPictWrap letterPart">
+                                <img
+                                    src="src/yandexCircle.jpg"
+                                    class="senderPict"
+                                    alt="yandex"
+                                />
+                            </li>
+                            <li class="sender letterPart">
+                                Яндекс.Паспорт
+                            </li>
+                            <li class="unread letterPart">
+
+                            </li>
+                            <li class="letterText letterPart">
+                                Соберите всю почту в этот ящик
+                            </li>
+                            <li class="date letterPart">
+                                6 авг
+                            </li>
+                        </ul>
+                        <hr class="delimiterLine">
+                    </li>
+
+                    <li class="letter">
+                        <ul class="letterInnerior">
+                            <li class="squareNew letterPart">
+                                <label>
+                                    <input type="checkbox" name="CCC" class="selectCheckbox">
+                                    <div class="selectButton"></div>
+                                </label>
+                            </li>
+                            <li class="senderPictWrap letterPart">
+                                <img
+                                    src="src/yandexCircle.jpg"
+                                    class="senderPict"
+                                    alt="yandex"
+                                />
+                            </li>
+                            <li class="sender letterPart">
+                                Яндекс.Паспорт
+                            </li>
+                            <li class="unread letterPart">
+
+                            </li>
+                            <li class="letterText letterPart">
+                                Соберите всю почту в этот ящик
+                            </li>
+                            <li class="date letterPart">
+                                6 авг
+                            </li>
+                        </ul>
+                        <hr class="delimiterLine">
+                    </li>
+                </section>
+                <section class="other">
+                    <hr class="delimiterLine">
+                    Помощь и обратная связь&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Реклама&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    © 2001 - 2018, Яндекс
+                </section>
+                <section class="otherLine emLine"></section>
+            </ul>
         </section>
     </main>
 
